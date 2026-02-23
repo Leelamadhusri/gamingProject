@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 10px;
+    background-color:rgb(88, 234, 122);
+}
+.box1{
+    align-items: center;
+    background-color: rgb(90, 113, 243);
+    align-content: center;
+    padding: 10%;
+    margin: 5%;
+    border-radius: 40%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#result {
+    color: #333;
+}

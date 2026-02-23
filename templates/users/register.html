@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - Gaming World</title>
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+</head>
+<body>
+
+<div class="auth-container">
+    <h2>🕹 Create Gamer Account</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Choose Username" required>
+        <input type="password" name="password" placeholder="Create Password" required>
+        <button type="submit">Register</button>
+    </form>
+
+    <p style="margin-top:15px;">
+        Already a gamer? <a href="{% url 'login' %}">Login Here</a>
+    </p>
+</div>
+
+</body>
+</html>

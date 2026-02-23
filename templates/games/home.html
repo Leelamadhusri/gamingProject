@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Gaming World 🎮</h1>
+        <h3>Choose a game to play:</h3>
+
+        <div class="game-links">
+
+            <div class="box">
+                <h4>Mini Word Guessing Game</h4>
+                <div class="box-img">
+                    <img src="{% static 'images/miniWord.png' %}" alt="Mini Word Guessing Game">
+                </div>
+                <a href="{% url 'hangman' %}">Start Game</a>
+            </div>
+
+            <div class="box">
+                <h4>Balls Game</h4>
+                <div class="box-img">
+                    <img src="{% static 'images/balls.png' %}" alt="Balls Game">
+                </div>
+                <a href="{% url 'ball' %}">Start Game</a>
+            </div>
+
+            <div class="box">
+                <h4>Color Guessing Game</h4>
+                <div class="box-img">
+                    <img src="{% static 'images/guesscolor.png' %}" alt="Color Guessing Game">
+                </div>
+                <a href="{% url 'color' %}">Start Game</a>
+            </div>
+
+            <div class="box">
+                <h4>Dice Rolling Game</h4>
+                <div class="box-img">
+                    <img src="{% static 'images/dice.png' %}" alt="Dice Rolling Game">
+                </div>
+                <a href="{% url 'dice' %}">Start Game</a>
+            </div>
+
+            <div class="box">
+                <h4>Random Number Game</h4>
+                <div class="box-img">
+                    <img src="{% static 'images/random.png' %}" alt="Random Number Game">
+                </div>
+                <a href="{% url 'number' %}">Start Game</a>
+            </div>
+
+            <div class="box">
+                <h4>Rock Paper Scissors Game</h4>
+                <div class="box-img">
+                    <img src="{% static 'images/rps.png' %}" alt="Rock Paper Scissors Game">
+                </div>
+                <a href="{% url 'rps' %}">Start Game</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

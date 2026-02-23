@@ -1,0 +1,42 @@
+body {
+    background-color: #9be93c;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    margin: 0;
+}
+.game{
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 400px;
+}
+.colors{
+    display: flex;
+    justify-content: space-around;
+    gap: 18px;
+    margin: 25px 0 18px;
+}
+.box{
+    width: 110px;
+    height: 110px;
+    background-color: #ffffff;
+    cursor: pointer;
+    border-radius: 8px;
+    display: inline-block;
+    border: 2px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    /* hide any inner text (we removed text nodes in HTML) */
+    line-height: 0;
+    
+}
+.answer{
+    text-align: center;
+    margin-top: 20px;
+}

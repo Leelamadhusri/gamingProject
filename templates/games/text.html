@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the Number</title>
+
+    <!-- Django Static CSS -->
+    <link rel="stylesheet" href="{% static 'css/backcolor.css' %}">
+</head>
+<body>
+
+<div class="box">
+    <h1>Guess the Number (1-20)</h1>
+
+    <div class="controls">
+        <input type="number" id="guess" min="1" max="20" placeholder="Enter">
+        <button onclick="checkGuess()">Submit</button>
+    </div>
+
+    <p id="result"></p>
+</div>
+
+<!-- Django Static JS -->
+<script src="{% static 'js/text.js' %}"></script>
+
+</body>
+</html>

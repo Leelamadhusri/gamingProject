@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Guessing Game</title>
+    <link rel="stylesheet" href="{% static 'css/color.css' %}">
+
+</head>
+<body>
+    <div class="game">
+        <h1>Color Guessing Game 🎨</h1>
+        <p id="question">Guess the color!</p>
+        <p id="hints" style="font-weight:600;">Hints will appear here.</p>
+    <div class="colors">
+        <div class="box" id="box1" role="button" aria-label="color option 1"></div>
+        <div class="box" id="box2" role="button" aria-label="color option 2"></div>
+        <div class="box" id="box3" role="button" aria-label="color option 3"></div>
+    </div>
+        <h2 id="message"></h2>
+        <button onclick="startGame()">New Colors</button>
+    
+    <!-- <div class="answer">
+        <input type="text" id="colorInput" placeholder="Enter your guess (e.g., #ff5733 or rgb(255, 87, 51))">
+        <button onclick="checkAnswer()">Submit Guess</button>
+    </div> -->
+    </div>
+    <script src="{% static 'js/color.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Word Guessing</title><link rel="stylesheet" href="{% static 'css/ball.css' %}">
+<link rel="stylesheet" href="{% static 'css/hangman.css' %}">
+
+</head>
+<body>
+    <div class="game">
+        <h1>Guess the Word  🪢</h1>
+        <p id="hint"></p>
+        <p id="word"></p>
+        <p>Attempts Left: <span id="attempts"></span></p>
+        <input type="text" id="letterInput" maxlength="1" placeholder="Enter a letter">
+        <br><br>
+        <button onclick="guessLetter()">Guess</button>
+
+        <h2 id="message"></h2>
+        <button onclick="startGame()">New Game</button>
+    </div>
+    <script src="{% static 'js/hangman.js' %}"></script>
+</body>
+</html>
