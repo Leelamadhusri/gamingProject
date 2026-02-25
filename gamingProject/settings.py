@@ -19,17 +19,24 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'unsafe-secret-key')
 
-DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+# DEBUG → Default False in production
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-if DEBUG:
-    ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-else:
-    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+# Always allow your Render domain + localhost
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'gamingproject-7nvg.onrender.com',  # 🔥 your Render domain
+]
 
-CSRF_TRUSTED_ORIGINS = os.environ.get(
-    'CSRF_TRUSTED_ORIGINS',
-    ''
-).split(',')
+# If you later set ALLOWED_HOSTS in environment variable, it will extend
+extra_hosts = os.environ.get('ALLOWED_HOSTS')
+if extra_hosts:
+    ALLOWED_HOSTS += extra_hosts.split(',')
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://gamingproject-7nvg.onrender.com'
+]
 
 
 # --------------------------------------------------
@@ -160,7 +167,7 @@ LOGOUT_REDIRECT_URL = 'login'
 
 
 # --------------------------------------------------
-# EMAIL SETTINGS (Use Environment Variables in Production)
+# EMAIL SETTINGS
 # --------------------------------------------------
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -175,7 +182,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 # --------------------------------------------------
-# SECURITY FOR PRODUCTION
+# PRODUCTION SECURITY SETTINGS
 # --------------------------------------------------
 
 if not DEBUG:
