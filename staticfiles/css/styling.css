@@ -1,28 +1,62 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin-top: 10px;
-    background-color:rgb(88, 234, 122);
-}
-.box1{
+    margin: 0;
+    background-color: rgb(88, 234, 122);
+
+    display: flex;
+    justify-content: center;
     align-items: center;
+
+    min-height: 100vh;
+    padding: 15px;
+}
+
+/* Game container */
+.box1{
     background-color: rgb(90, 113, 243);
-    align-content: center;
-    padding: 10%;
-    margin: 5%;
-    border-radius: 40%;
+
+    width: 90%;
+    max-width: 450px;
+
+    padding: 35px 25px;
+
+    border-radius: 30px;
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    box-sizing: border-box;
 }
 
+/* Buttons */
 button {
-    font-size: 18px;
+    font-size: clamp(14px, 3vw, 18px);
     padding: 10px 20px;
     margin: 10px;
+
     cursor: pointer;
+    border: none;
+    border-radius: 6px;
 }
 
+/* Result text */
 #result {
     color: #333;
+    font-size: clamp(16px, 3vw, 20px);
+}
+
+/* Mobile improvements */
+@media (max-width: 480px) {
+
+    .box1{
+        padding: 25px 18px;
+        border-radius: 20px;
+    }
+
+    button{
+        padding: 8px 16px;
+    }
+
 }
