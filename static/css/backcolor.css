@@ -2,72 +2,111 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgb(244, 250, 80);
 
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px;
 }
 
+/* GAME BOX */
 .box {
-    width: 900px;
-    height: 420px;
+    width: 90%;
+    max-width: 900px;
+    min-height: 350px;
+
     background-image: url("../images/number.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    border-radius: 100px;
+    border-radius: 40px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+
+    padding: 30px 20px;
+    box-sizing: border-box;
+
     box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
+/* TITLE */
 .box h1 {
-    font-size: 34px;
+    font-size: clamp(22px, 4vw, 34px);
     font-weight: 700;
     color: #0b0b0b;
-    margin: 0 0 20px 0;
-    text-align: center;
+    margin-bottom: 20px;
 }
 
+/* INPUT + BUTTON CONTAINER */
 .controls {
     display: flex;
     gap: 12px;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
+/* INPUT FIELD */
 input[type="number"] {
-    width: 80px;
+    width: 90px;
     padding: 10px;
     font-size: 16px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     text-align: center;
+
     background-color: rgb(248,237,81);
-    color: rgb(95, 194, 194);
+    color: rgb(95,194,194);
+
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
+/* BUTTON */
 button {
-    padding: 10px 14px;
+    padding: 10px 16px;
     font-size: 16px;
     cursor: pointer;
-    color: rgb(23, 25, 24);
-    background-color: rgb(248, 237, 81);
+
+    color: rgb(23,25,24);
+    background-color: rgb(248,237,81);
+
     border: none;
-    border-radius: 2px;
+    border-radius: 6px;
+
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
+/* RESULT TEXT */
 #result {
-    font-size: 18px;
+    font-size: clamp(16px, 3vw, 18px);
     margin-top: 20px;
     font-weight: bold;
     color: #000;
+}
+
+
+/* MOBILE IMPROVEMENTS */
+@media (max-width: 600px) {
+
+    .box {
+        border-radius: 25px;
+        padding: 25px 15px;
+    }
+
+    input[type="number"] {
+        width: 70px;
+        font-size: 15px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 9px 14px;
+    }
+
 }

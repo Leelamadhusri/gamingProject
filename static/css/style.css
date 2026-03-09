@@ -4,32 +4,39 @@ body {
     background-color: #0ddd4c;
 }
 
+/* Main container */
 .container {
     text-align: center;
-    padding: 50px;
+    padding: 40px 20px;
 }
 
+/* Game grid */
 .game-links {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 across */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     margin-top: 30px;
 }
 
+/* Game card */
 .box {
     background-color: white;
-    padding: 50px;
+    padding: 30px;
     border-radius: 15px;
+
     box-shadow: 0 5px 10px rgba(29, 203, 219, 0.2);
 }
 
+/* Title */
 .box h4 {
     margin-bottom: 10px;
 }
 
+/* Image container */
 .box-img {
-    height: 300px;
+    height: clamp(150px, 30vw, 300px);
     background-color: #ddd;
+
     border-radius: 12px;
     margin-bottom: 15px;
 
@@ -37,21 +44,27 @@ body {
     justify-content: center;
     align-items: center;
 
-    overflow: hidden; /* VERY IMPORTANT */
+    overflow: hidden;
 }
+
+/* Image */
 .box-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* keeps image inside box */
+    object-fit: cover;
 }
 
+/* Start button */
 .box a {
     display: inline-block;
     padding: 8px 15px;
+
     background-color: #ea3fdf;
     color: white;
+
     text-decoration: none;
     border-radius: 8px;
+    font-size: clamp(14px, 2vw, 16px);
 }
 
 .box a:hover {
