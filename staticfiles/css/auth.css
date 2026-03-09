@@ -16,7 +16,7 @@ body {
 /* Glass card effect */
 .auth-container {
     background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
 
     padding: 35px 30px;
 
@@ -26,7 +26,7 @@ body {
     border-radius: 15px;
     text-align: center;
 
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
 
     box-sizing: border-box;
 }
@@ -41,7 +41,7 @@ body {
     text-shadow: 0 0 10px #00ffff;
 }
 
-/* Inputs */
+/* Input fields */
 .auth-container input {
     width: 100%;
 
@@ -56,6 +56,8 @@ body {
     color: white;
 
     font-size: 14px;
+
+    box-sizing: border-box;
 }
 
 .auth-container input::placeholder {
@@ -78,7 +80,7 @@ body {
     font-weight: bold;
     cursor: pointer;
 
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .auth-container button:hover {
@@ -90,23 +92,30 @@ body {
 .auth-container a {
     color: #00ffff;
     text-decoration: none;
+    font-size: 14px;
 }
 
 .auth-container a:hover {
     text-decoration: underline;
 }
 
-/* Error messages */
+/* Error message */
 .error-message {
     color: #ff4d4d;
     margin-top: 10px;
+    font-size: 14px;
 }
 
 /* Mobile adjustments */
 @media (max-width: 480px) {
 
+    body {
+        padding: 10px;
+    }
+
     .auth-container {
         padding: 25px 20px;
+        max-width: 95%;
     }
 
 }

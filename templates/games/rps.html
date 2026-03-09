@@ -4,11 +4,16 @@
 <head>
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="{% static 'css/styling.css' %}">
-
 </head>
+
 <body>
+
+<div class="container">
+
     <h1>Rock Paper Scissors</h1>
+
     <div class="box1">
+
         <div class="choices">
             <button class="choice-btn" onclick="playGame('rock')">✊ Rock</button>
             <button class="choice-btn" onclick="playGame('paper')">✋ Paper</button>
@@ -22,12 +27,18 @@
         </div>
 
         <p id="computer"></p>
+
         <h2 id="result">Make your move!</h2>
+
         <div class="controls">
             <button id="reset-btn">Reset</button>
         </div>
+
     </div>
 
-    <script src="{% static 'js/index.js' %}"></script>
+</div>
+
+<script src="{% static 'js/index.js' %}"></script>
+
 </body>
 </html>

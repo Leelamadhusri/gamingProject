@@ -1,21 +1,15 @@
-/* Page layout */
 body {
     margin: 0;
-    width: 100%;
     min-height: 100vh;
-    background-color: #111;
+    background: radial-gradient(circle,#222,#000);
     overflow: hidden;
-    position: relative;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: Arial;
 }
 
 /* Game container */
 #gameArea {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: relative;
 }
 
@@ -24,6 +18,8 @@ body {
     position: absolute;
     border-radius: 50%;
     cursor: pointer;
+    box-shadow: 0 0 15px rgba(255,255,255,0.7);
+    transition: transform 0.15s;
 }
 
 /* Score display */
@@ -31,19 +27,8 @@ body {
     position: fixed;
     top: 10px;
     left: 10px;
-    font-size: clamp(16px, 4vw, 24px);
+    font-size: clamp(18px,4vw,26px);
     color: white;
     z-index: 1000;
     font-weight: bold;
-}
-
-/* Mobile adjustments */
-@media (max-width: 600px) {
-
-    #scoreBoard {
-        top: 8px;
-        left: 8px;
-        font-size: 18px;
-    }
-
 }

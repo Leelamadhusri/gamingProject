@@ -1,62 +1,73 @@
-body {
+body{
     font-family: Arial, sans-serif;
-    text-align: center;
     margin: 0;
-    background-color: rgb(88, 234, 122);
+    background-color: rgb(88,234,122);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-    min-height: 100vh;
-    padding: 15px;
+    min-height:100vh;
 }
 
-/* Game container */
+/* Wrapper */
+.container{
+    text-align:center;
+}
+
+/* Title */
+.container h1{
+    font-size:40px;
+    margin-bottom:30px;
+}
+
+/* Game box */
 .box1{
-    background-color: rgb(90, 113, 243);
+    background-color: rgb(90,113,243);
 
-    width: 90%;
-    max-width: 450px;
+    width:420px;
+    padding:40px;
 
-    padding: 35px 25px;
-
-    border-radius: 30px;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    box-sizing: border-box;
+    border-radius:30px;
 }
 
-/* Buttons */
-button {
-    font-size: clamp(14px, 3vw, 18px);
-    padding: 10px 20px;
-    margin: 10px;
+/* Choice buttons */
+.choice-btn{
+    font-size:16px;
+    padding:10px 20px;
+    margin:10px;
 
-    cursor: pointer;
-    border: none;
-    border-radius: 6px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
 }
 
-/* Result text */
-#result {
-    color: #333;
-    font-size: clamp(16px, 3vw, 20px);
+/* Scoreboard */
+.scoreboard{
+    margin-top:15px;
 }
 
-/* Mobile improvements */
-@media (max-width: 480px) {
+/* Result */
+#result{
+    margin-top:15px;
+}
+
+/* Reset button */
+#reset-btn{
+    margin-top:20px;
+    padding:10px 20px;
+}
+
+/* Mobile responsive */
+@media (max-width:600px){
 
     .box1{
-        padding: 25px 18px;
-        border-radius: 20px;
+        width:90%;
+        padding:25px;
     }
 
-    button{
-        padding: 8px 16px;
+    .container h1{
+        font-size:28px;
     }
 
 }

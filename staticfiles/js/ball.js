@@ -10,9 +10,7 @@ function random(min, max) {
 }
 
 function randomColor() {
-    return `rgb(${Math.floor(random(0, 255))},
-                ${Math.floor(random(0, 255))},
-                ${Math.floor(random(0, 255))})`;
+    return `hsl(${Math.floor(random(0,360))},80%,60%)`;
 }
 
 // Create balls
@@ -22,14 +20,22 @@ for (let i = 0; i < BALL_COUNT; i++) {
     ball.className = "ball";
     ball.style.backgroundColor = randomColor();
 
-    const size = random(30, 60);
+    const size = random(40, 70);
     ball.style.width = size + "px";
     ball.style.height = size + "px";
 
-    // 🖱️ Click to score
+    // Click event
     ball.addEventListener("click", () => {
+
         score++;
         scoreBoard.innerText = "Score: " + score;
+
+        // fun click effect
+        ball.style.transform = "scale(1.3)";
+        setTimeout(()=>{
+            ball.style.transform = "scale(1)";
+        },150);
+
         ball.style.backgroundColor = randomColor();
     });
 
@@ -39,14 +45,16 @@ for (let i = 0; i < BALL_COUNT; i++) {
         element: ball,
         x: random(0, window.innerWidth - size),
         y: random(0, window.innerHeight - size),
-        dx: random(-4, 4),
-        dy: random(-4, 4),
+        dx: random(-3, 3),
+        dy: random(-3, 3),
         size: size
     });
 }
 
 function animate() {
+
     balls.forEach(ball => {
+
         ball.x += ball.dx;
         ball.y += ball.dy;
 
@@ -60,6 +68,7 @@ function animate() {
 
         ball.element.style.left = ball.x + "px";
         ball.element.style.top = ball.y + "px";
+
     });
 
     requestAnimationFrame(animate);
